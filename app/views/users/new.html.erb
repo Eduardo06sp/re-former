@@ -33,4 +33,16 @@
 
   <%#= submit_tag %>
 <%# end %>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username, value: 'John123' %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email, placeholder: 'john123@protonmail.com' %>
+
+  <%= form.label :password, 'Enter a password (any length):' %>
+  <%= form.password_field :password %>
+
+  <%= form.submit %>
 <% end %>
