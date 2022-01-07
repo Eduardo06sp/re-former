@@ -35,6 +35,15 @@
 <%# end %>
 
 <%= form_with model: @user do |form| %>
+
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |err_msg| %>
+        <li><%= err_msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form.label :username %>
   <%= form.text_field :username, value: 'John123' %>
 
